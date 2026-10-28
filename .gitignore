@@ -1,0 +1,9 @@
+.pio/
+.vscode/
+sdkconfig
+sdkconfig.*
+!sdkconfig.defaults
+src/secrets.h
+JungHome*.json
+jung_mesh_cdb.json
+__pycache__/
