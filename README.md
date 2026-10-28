@@ -122,6 +122,22 @@ did most of the investigation, including:
 
 [docs/PROTOCOL.md](docs/PROTOCOL.md) documents what was found and how.
 
+## Security notes
+
+- **The JUNG export and `src/secrets.h` are a house key.** They contain the
+  mesh keys, which allow controlling every switch from within Bluetooth
+  range. Both are git-ignored; keep them private.
+- **OTA updates are not authenticated.** Any client that can publish to
+  `jungmesh/bridge/ota` can make the bridge download and install firmware
+  from a URL, over plain HTTP, without signature checks. The automatic
+  rollback protects against broken images, not malicious ones. Keep the
+  broker password-protected and on your local network.
+- **MQTT access means switch access.** `jungmesh/debug/tx` sends arbitrary
+  mesh messages, and the sniffer (off by default) publishes decrypted mesh
+  traffic to MQTT. Treat MQTT credentials like the mesh keys.
+- The bridge uses the network's existing keys; it does not weaken the
+  mesh's own encryption.
+
 ## Disclaimer
 
 This is an independent project, not affiliated with or endorsed by
