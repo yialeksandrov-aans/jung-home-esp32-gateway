@@ -72,6 +72,9 @@ The full step-by-step guide, including the Home Assistant side, is in
 
 ## Updating over Wi-Fi
 
+The tools read the MQTT settings from `src/secrets.h` and need
+[paho-mqtt](https://pypi.org/project/paho-mqtt/) (`pip install paho-mqtt`).
+
 ```bash
 pio run && python tools/ota.py
 ```
