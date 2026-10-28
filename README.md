@@ -1,8 +1,8 @@
 # JUNG HOME ESP32 Gateway
 
-A ~€5 ESP32 that replaces the €233 JUNG HOME Gateway: it joins an existing
-**JUNG HOME Bluetooth Mesh** network and exposes every switch to
-**Home Assistant** over MQTT, fully local, no cloud.
+ESP32 firmware that joins an existing **JUNG HOME Bluetooth Mesh** network
+and exposes every switch to **Home Assistant** over MQTT, fully local, no
+cloud.
 
 - **On/off and dimming** for every channel, with instant two-way sync:
   pressing a wall rocker updates Home Assistant within seconds
